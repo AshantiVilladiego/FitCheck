@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::selection {
+    background-color: #c6f135;
+    color: #1b1f3b;
+  }
+
+  /*
+   * Signature background: soft neon "marker bleed" — three color blooms
+   * (green / yellow / pink) wash behind the page, like ink from a
+   * highlighter set bleeding through the paper. The fine grid stays on
+   * top as quiet texture so the color is the one bold move, not the
+   * grid competing with it. Cards stay solid white/paper on top so text
+   * contrast is never at risk.
+   */
+  body {
+    background-color: #fbf9f4;
+    background-image:
+      radial-gradient(38rem 30rem at 6% 10%, rgba(198, 241, 53, 0.4), transparent 60%),
+      radial-gradient(34rem 28rem at 92% 6%, rgba(255, 227, 71, 0.38), transparent 60%),
+      radial-gradient(42rem 34rem at 80% 92%, rgba(255, 46, 196, 0.32), transparent 60%),
+      radial-gradient(30rem 26rem at 10% 95%, rgba(198, 241, 53, 0.26), transparent 55%),
+      linear-gradient(#e4e1d8 1px, transparent 1px),
+      linear-gradient(90deg, #e4e1d8 1px, transparent 1px);
+    background-size: auto, auto, auto, auto, 48px 48px, 48px 48px;
+    background-attachment: fixed, fixed, fixed, fixed, scroll, scroll;
+    background-position: 0 0, 0 0, 0 0, 0 0, -1px -1px, -1px -1px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat;
+  }
+}
+
+@layer utilities {
+  .highlighter-mark {
+    background: linear-gradient(120deg, #c6f135 0%, #c6f135 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 45%;
+    background-position: 0 65%;
+  }
+
+  .highlighter-mark-yellow {
+    background: linear-gradient(120deg, #ffe347 0%, #ffe347 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 45%;
+    background-position: 0 65%;
+  }
+
+  .highlighter-mark-pink {
+    background: linear-gradient(120deg, #ff2ec4 0%, #ff2ec4 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 45%;
+    background-position: 0 65%;
+    color: #fbf9f4;
+  }
+}
